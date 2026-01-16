@@ -31,7 +31,7 @@ const nextVideo = () => {
           <header className="px-4 mt-10 h-[17vh] sm:h-[100px] md:h-[120px] lg:h-[140px] rounded-lg flex items-center justify-between flex-shrink-0 mb-4">
             <div className="flex items-center gap-2">
              <div
-  className="relative -translate-y-[40px] w-[123px] h-[107px] sm:w-12 sm:h-12 rounded-lg"
+  className="relative -translate-y-[40px] w-[103px] h-[87px] sm:w-12 sm:h-12 rounded-lg"
   style={{
     backgroundImage: "url(/assets/1.png)",
     backgroundSize: "cover",
@@ -108,7 +108,7 @@ const nextVideo = () => {
 
 
 
-                  <div className="w-full h-[6.7vh] gap-10 bg-[#63277E] flex items-center justify-center px-4 mb-2">
+                  <div className="w-full h-[6.7vh] gap-10 bg-[#63277E] flex items-center justify-center px-4 ">
   {/* LEFT */}
   <p className="text-[#FFFFFF] text-2xl font-[fredoka] font-bold">
     Choose Your Action

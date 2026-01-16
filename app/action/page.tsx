@@ -1,11 +1,12 @@
 "use client"
-import { useState } from "react"
+import Link from "next/link"
 
+import FORM from "@/components/form"
 
 
 
 export default function Home() {
-  
+ 
   return (
     <div >
          <div className="h-4 bg-[#FFD900]"></div>
@@ -14,22 +15,21 @@ export default function Home() {
                   backgroundPosition: "center"}}>
                     
         {/* Inner container maintains 1080/1920 aspect ratio with max dimensions */}
-        <div className="mt-2 w-[100vw] h-[90vh] max-w-full max-h-[1920px] flex flex-col gap-[10px] rounded-lg overflow-hidden"  
+        <div className="mt-2 w-full h-[90vh] max-w-full max-h-[1920px] flex flex-col gap-[10px] rounded-lg"  
                   >
                  
           {/* Header with Logo */}
-          <header className="px-4 mt-10 h-[168px] sm:h-[100px] md:h-[120px] lg:h-[140px] rounded-lg flex items-center justify-between flex-shrink-0 mb-4">
+          <header className="px-4 mt-10 h-[17vh] sm:h-[100px] md:h-[120px] lg:h-[140px] rounded-lg flex items-center justify-between flex-shrink-0 mb-4">
             <div className="flex items-center gap-2">
-              <div
-                className="w-[123px] h-[107px] sm:w-12 sm:h-12 rounded-lg flex items-center justify-center font-black text-purple-900 text-xl "
-                style={{
-                  backgroundImage: "url(/assets/1.png)",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  marginTop: "-140px",
+             <div
+  className="relative -translate-y-[40px] w-[103px] h-[87px] sm:w-12 sm:h-12 rounded-lg"
+  style={{
+    backgroundImage: "url(/assets/1.png)",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  }}
+></div>
 
-                }}
-              ></div>
              
     <div className="mt-10 mr-16 flex-shrink-0">
   <img
@@ -43,7 +43,7 @@ export default function Home() {
          
           </div>
           </header>
-        <div className="w-full h-[77px] bg-[#63277E] flex items-center justify-between px-4">
+        <div className="w-full h-[7.7vh] bg-[#63277E] flex items-center justify-between px-4">
   {/* LEFT */}
   <img
     src="/assets/Back.png"
@@ -53,30 +53,15 @@ export default function Home() {
 
   {/* RIGHT */}
   <p className="text-[#FFD900] text-3xl font-[Bangers] tracking-[2px]">
-    SHARE YOUR STORY 
-     </p>
-</div>
-
-
-          {/* Video Carousel Section */}
-         
-
-
-
-                  <div className="w-full h-[67px] gap-10 bg-[#63277E] flex items-center justify-center px-4">
-  {/* LEFT */}
-  <p className="text-[#FFFFFF] text-2xl font-[fredoka] font-bold">
-    Choose Your Action
+    SHARE YOUR STORY
   </p>
-  <img
-    src="/assets/5.png"
-    className="w-8 h-8 cursor-pointer"
-    alt="Back"
-  />
-
-  {/* RIGHT */}
-  
 </div>
+<div>
+    <FORM/>
+</div>
+
+
+      
         </div>
       </div>
     </div>
