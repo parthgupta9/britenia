@@ -57,7 +57,7 @@ export default function Home() {
   </p>
 </div>
 <div className="p-4">
-    <img src="/assets/Name.jpg" alt="Submit" className="mx-auto h-[25vh] w-full md:w-1/2 lg:w-1/2" />
+    <img src="/assets/Name.jpg" alt="Submit" className="mx-auto w-full md:w-1/2 lg:w-1/2" />
 
 <button
 
