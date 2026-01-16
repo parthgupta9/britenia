@@ -55,7 +55,7 @@ const nextVideo = () => {
   <img
     src="/assets/2.png"
     alt="Logo"
-    className="w-[150px] h-[220px] sm:w-[200px] sm:h-[200px] md:w-[250px] md:h-[250px] lg:w-[293px] lg:h-[293px] object-contain "
+    className="w-[15vh] h-[22vh] sm:w-[20vh] sm:h-[20vh] md:w-[25vh] md:h-[25vh] lg:w-[29.3vh] lg:h-[29.3vh] object-contain "
   style={{marginTop:"-50px"}}/>
 </div>
 
@@ -121,7 +121,7 @@ const nextVideo = () => {
 
 
 
-                  <div className="w-full h-[6.7vh] gap-10 bg-[#63277E] flex items-center justify-center px-4 ">
+                  <div className="w-full h-[6.7vh] gap-10 bg-[#63277E] flex items-center justify-center mb-1 px-4 ">
   {/* LEFT */}
   <p className="text-[#FFFFFF] text-2xl font-[fredoka] font-bold">
     Choose Your Action

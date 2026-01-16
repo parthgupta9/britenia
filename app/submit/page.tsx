@@ -35,8 +35,8 @@ export default function Home() {
   <img
     src="/assets/2.png"
     alt="Logo"
-    className="w-[150px] h-[220px] sm:w-[200px] sm:h-[200px] md:w-[250px] md:h-[250px] lg:w-[293px] lg:h-[293px] object-contain "
-  style={{marginTop:"-50px"}}/>
+    className="w-[15vh] h-[22vh] sm:w-[20vh] sm:h-[20vh] md:w-[25vh] md:h-[25vh] lg:w-[29.3vh] lg:h-[29.3vh] object-contain "
+  style={{marginTop:"-30px"}}/>
 </div>
 
 
@@ -57,7 +57,7 @@ export default function Home() {
   </p>
 </div>
 <div className="p-4">
-    <img src="/assets/Name.jpg" alt="Submit" className="mx-auto  w-full md:w-1/2 lg:w-1/2" />
+    <img src="/assets/Name.jpg" alt="Submit" className="mx-auto h-[25vh] w-full md:w-1/2 lg:w-1/2" />
 
 <button
 
