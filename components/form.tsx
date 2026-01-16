@@ -1,11 +1,15 @@
 "use client"
 
+import Link from "next/link"
 import type React from "react"
 
 import { useState } from "react"
 
 
 export default function ParentConsentForm() {
+    const [otpRequested, setOtpRequested] = useState(false)
+const [otp, setOtp] = useState(["", "", "", ""])
+
   const [formData, setFormData] = useState({
     parentName: "Abcd",
     gender: "Male",
@@ -40,9 +44,9 @@ export default function ParentConsentForm() {
   }
 
   return (
-   <div className="w-full max-w-lg p-4 h-[55vh] mx-auto">
+  <div className="w-full max-w-lg p-4 h-auto mx-auto">
 
-    <div className="bg-[#63277E] border-4 border-[#FFD900] px-4 py-2 h-[40vh] overflow-y-auto">
+   <div className={`bg-[#63277E] border-4 border-[#FFD900] px-4 py-2 ${otpRequested ? 'h-[43vh]' : 'h-[40vh]'} overflow-y-auto`}>
 
         {/* Header */}
         <div className=" text-center">
@@ -106,13 +110,33 @@ export default function ParentConsentForm() {
                 placeholder="9999999999"
               />
             </div>
-            <button
-              type="button"
-              className="bg-yellow-400 text-black font-[fredoka] font-bold py-1 px-2  hover:bg-yellow-500 transition-colors whitespace-nowrap"
-            >
-              Get OTP
-            </button>
+         <button
+  type="button"
+  onClick={() => setOtpRequested(true)}
+  className="bg-yellow-400 text-black font-[fredoka] font-bold py-1 px-2 hover:bg-yellow-500"
+>
+  Get OTP
+</button>
+
           </div>
+{otpRequested && (
+  <div className="flex gap-3 justify-between mt-3">
+    {otp.map((digit, index) => (
+      <input
+        key={index}
+        type="text"
+        maxLength={1}
+        value={digit}
+        onChange={(e) => {
+          const newOtp = [...otp]
+          newOtp[index] = e.target.value.replace(/\D/, "")
+          setOtp(newOtp)
+        }}
+        className="w-14 h-8 text-center text-lg font-bold bg-white text-black border-2 border-[#FFD900] focus:outline-none focus:ring-2 focus:ring-[#FFD900]"
+      />
+    ))}
+  </div>
+)}
 
           {/* Checkboxes */}
           <div className="space-y-3 py-4">
@@ -140,14 +164,21 @@ export default function ParentConsentForm() {
           </div>
         </form>
       </div>
+<Link href="/submit">
+<button
 
-      {/* Submit Button */}
-      <button
-        onClick={handleSubmit}
-        className="w-full mt-4 bg-[##D4D4D4] text-[#9F9F9F] font-[fredoka] font-semibold py-3 px-6  hover:bg-gray-400 transition-colors"
-      >
-        Submit with Parent —
-      </button>
+  disabled={!otpRequested}
+  className={`w-full mt-4 font-[fredoka] font-semibold py-2 px-4 transition-colors text-xl
+    ${
+      otpRequested
+        ? "bg-[#FFD900] text-black hover:bg-yellow-500"
+        : "bg-[#D4D4D4] text-[#9F9F9F] cursor-not-allowed"
+    }
+  `}
+>
+  Submit with Parent —
+</button>
+</Link>
     </div>
   )
 }
