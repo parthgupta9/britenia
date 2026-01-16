@@ -40,7 +40,7 @@ export default function Home() {
 </div>
           </div>
           </header>
-        <div className="w-full h-[6.5vh] bg-[#63277E] flex items-center justify-between px-4">
+        <div className="w-full h-[6vh] bg-[#63277E] flex items-center justify-between px-4">
   {/* LEFT */}
   <img
     src="/assets/Back.png"
@@ -49,7 +49,7 @@ export default function Home() {
   />
 
   {/* RIGHT */}
-  <p className="text-[#FFD900] text-3xl font-[Bangers] tracking-[2px]">
+  <p className="text-[#FFD900] text-2.5xl font-[Bangers] tracking-[2px]">
     SHARE YOUR STORY
   </p>
 </div>
