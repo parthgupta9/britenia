@@ -108,7 +108,7 @@ const nextVideo = () => {
 
 
 
-                  <div className="w-full h-[67px] gap-10 bg-[#63277E] flex items-center justify-center px-4">
+                  <div className="w-full h-[6.7vh] gap-10 bg-[#63277E] flex items-center justify-center px-4 mb-2">
   {/* LEFT */}
   <p className="text-[#FFFFFF] text-2xl font-[fredoka] font-bold">
     Choose Your Action
