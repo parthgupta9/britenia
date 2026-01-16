@@ -6,16 +6,27 @@ import { useState } from "react"
 
 
 export default function Home() {
-  const videos = ["/assets/1.mp4", "/assets/2.mp4"]
+  const slides = [
+  {
+    src: "/assets/1.mp4",
+    title: "VERBAL BULLYING",
+  },
+  {
+    src: "/assets/2.mp4",
+    title: "PHYSICAL BULLYING",
+  },
+]
+
 const [activeIndex, setActiveIndex] = useState(0)
 
 const prevVideo = () => {
-  setActiveIndex((prev) => (prev === 0 ? videos.length - 1 : prev - 1))
+  setActiveIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1))
 }
 
 const nextVideo = () => {
-  setActiveIndex((prev) => (prev === videos.length - 1 ? 0 : prev + 1))
+  setActiveIndex((prev) => (prev === slides.length - 1 ? 0 : prev + 1))
 }
+
   return (
     <div >
          <div className="h-4 bg-[#FFD900]"></div>
@@ -61,9 +72,10 @@ const nextVideo = () => {
   />
 
   {/* RIGHT */}
-  <p className="text-[#FFD900] text-3xl font-[Bangers] tracking-[2px]">
-    VERBAL BULLYING
-  </p>
+ <p className="text-[#FFD900] text-3xl font-[Bangers] tracking-[2px] transition-all duration-300">
+  {slides[activeIndex].title}
+</p>
+
 </div>
 
 
@@ -81,14 +93,15 @@ const nextVideo = () => {
                 {/* Video 1 */}
                 <div className="overflow-hidden aspect-[3/5] h-[40vh] ">
 
-           <video
-  key={videos[activeIndex]}
-  src={videos[activeIndex]}
+         <video
+  key={slides[activeIndex].src}
+  src={slides[activeIndex].src}
   className="w-full h-full object-cover"
   controls
   playsInline
   muted
 />
+
 
                  
                
