@@ -1,4 +1,5 @@
 "use client"
+import Link from "next/link"
 import { useState } from "react"
 
 
@@ -23,22 +24,21 @@ const nextVideo = () => {
                   backgroundPosition: "center"}}>
                     
         {/* Inner container maintains 1080/1920 aspect ratio with max dimensions */}
-        <div className="mt-2 w-[100vw] h-[90vh] max-w-full max-h-[1920px] flex flex-col gap-[10px] rounded-lg overflow-hidden"  
+        <div className="mt-2 w-full h-[90vh] max-w-full max-h-[1920px] flex flex-col gap-[10px] rounded-lg"  
                   >
                  
           {/* Header with Logo */}
-          <header className="px-4 mt-10 h-[168px] sm:h-[100px] md:h-[120px] lg:h-[140px] rounded-lg flex items-center justify-between flex-shrink-0 mb-4">
+          <header className="px-4 mt-10 h-[17vh] sm:h-[100px] md:h-[120px] lg:h-[140px] rounded-lg flex items-center justify-between flex-shrink-0 mb-4">
             <div className="flex items-center gap-2">
-              <div
-                className="w-[123px] h-[107px] sm:w-12 sm:h-12 rounded-lg flex items-center justify-center font-black text-purple-900 text-xl "
-                style={{
-                  backgroundImage: "url(/assets/1.png)",
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  marginTop: "-140px",
+             <div
+  className="relative -translate-y-[40px] w-[123px] h-[107px] sm:w-12 sm:h-12 rounded-lg"
+  style={{
+    backgroundImage: "url(/assets/1.png)",
+    backgroundSize: "cover",
+    backgroundPosition: "center",
+  }}
+></div>
 
-                }}
-              ></div>
              
     <div className="mt-10 mr-16 flex-shrink-0">
   <img
@@ -52,7 +52,7 @@ const nextVideo = () => {
          
           </div>
           </header>
-        <div className="w-full h-[77px] bg-[#63277E] flex items-center justify-between px-4">
+        <div className="w-full h-[7.7vh] bg-[#63277E] flex items-center justify-between px-4">
   {/* LEFT */}
   <img
     src="/assets/Back.png"
@@ -79,8 +79,7 @@ const nextVideo = () => {
               {/* Video Player Container */}
               <div className="flex-1 flex flex-col gap-[10px] min-w-0 min-h-0 p-2 border-2 border-[#FFD900]">
                 {/* Video 1 */}
-                <div className="bg-black overflow-hidden shadow-lg 
-     aspect-[3/5] sm:aspect-[9/16] md:aspect-[557.44/891] max-h-[40vh] ">
+                <div className="overflow-hidden aspect-[3/5] h-[40vh] ">
 
            <video
   key={videos[activeIndex]}
@@ -114,11 +113,13 @@ const nextVideo = () => {
   <p className="text-[#FFFFFF] text-2xl font-[fredoka] font-bold">
     Choose Your Action
   </p>
+  <Link href="/action">
   <img
     src="/assets/5.png"
     className="w-8 h-8 cursor-pointer"
     alt="Back"
   />
+  </Link>
 
   {/* RIGHT */}
   
