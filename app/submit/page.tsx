@@ -15,7 +15,7 @@ export default function Home() {
                   backgroundPosition: "center"}}>
                     
         {/* Inner container maintains 1080/1920 aspect ratio with max dimensions */}
-        <div className="mt-2 w-full h-[90vh] max-w-full max-h-[1920px] flex flex-col gap-[10px] rounded-lg"  
+        <div className="mt-2 w-full h-[100vh] max-w-full max-h-[1920px] flex flex-col gap-[10px] rounded-lg"  
                   >
                  
           {/* Header with Logo */}

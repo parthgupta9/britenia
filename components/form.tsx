@@ -44,9 +44,9 @@ const [otp, setOtp] = useState(["", "", "", ""])
   }
 
   return (
-  <div className="w-full max-w-lg p-4 h-auto mx-auto">
+  <div className="w-full max-w-lg h-auto mx-auto">
 
-   <div className={`bg-[#63277E] border-4 border-[#FFD900] px-4 py-2 ${otpRequested ? 'h-[44vh]' : 'h-[40vh]'} overflow-y-auto`}>
+   <div className={`bg-[#63277E] border-4 border-[#FFD900] px-4 py-2 ${otpRequested ? 'h-[54vh]' : 'h-[49vh]'} overflow-y-auto`}>
 
         {/* Header */}
         <div className=" text-center">
@@ -132,7 +132,7 @@ const [otp, setOtp] = useState(["", "", "", ""])
           newOtp[index] = e.target.value.replace(/\D/, "")
           setOtp(newOtp)
         }}
-        className="w-14 h-8 text-center text-lg font-bold bg-white text-black border-2 border-[#FFD900] focus:outline-none focus:ring-2 focus:ring-[#FFD900]"
+        className="w-14 h-6 text-center text-lg font-bold bg-white text-black border-2 border-[#FFD900] focus:outline-none focus:ring-2 focus:ring-[#FFD900]"
       />
     ))}
   </div>
@@ -145,7 +145,7 @@ const [otp, setOtp] = useState(["", "", "", ""])
                 type="checkbox"
                 checked={checkboxes.moderation}
                 onChange={() => handleCheckboxChange("moderation")}
-                className="w-5 h-5 mt-0.5 cursor-pointer accent-yellow-400"
+                className="w-4 h-4 cursor-pointer accent-yellow-400"
               />
               <span className="ml-3 text-white text-sm font-[fredoka]">
                 I allow this story to be moderated and shared on the platform.
@@ -157,7 +157,7 @@ const [otp, setOtp] = useState(["", "", "", ""])
                 type="checkbox"
                 checked={checkboxes.anonymize}
                 onChange={() => handleCheckboxChange("anonymize")}
-                className="w-5 h-5 mt-0.5 cursor-pointer accent-blue-500"
+                className="w-4 h-4 cursor-pointer accent-blue-500"
               />
               <span className="ml-3 text-white text-sm font-[fredoka]">Anonymize child's name (Recommended)</span>
             </label>
@@ -168,7 +168,7 @@ const [otp, setOtp] = useState(["", "", "", ""])
 <button
 
   disabled={!otpRequested}
-  className={`w-full mt-4 font-[fredoka] font-semibold py-2 px-4 transition-colors text-xl
+  className={`w-full mt-2 font-[fredoka] font-semibold py-2 px-4 transition-colors text-xl
     ${
       otpRequested
         ? "bg-[#FFD900] text-black hover:bg-yellow-500"
