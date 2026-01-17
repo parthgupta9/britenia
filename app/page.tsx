@@ -94,7 +94,7 @@ const nextVideo = () => {
               {/* Video Player Container */}
               <div className="flex-1 flex flex-col gap-[10px] min-w-0 min-h-0 p-2 border-2 border-[#FFD900]">
                 {/* Video 1 */}
-                <div className="overflow-hidden aspect-[3/5] h-[37vh] ">
+                <div className="overflow-hidden aspect-[3/5] h-[34vh] ">
 
          <video
   key={slides[activeIndex].src}

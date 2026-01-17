@@ -44,20 +44,7 @@ export default function Home() {
          
           </div>
           </header>
-        <div className="w-full h-[7.7vh] bg-[#63277E] flex items-center justify-between px-4">
-  {/* LEFT */}
-  <img
-    src="/assets/Back.png"
-    className="w-8 h-8 cursor-pointer"
-    alt="Back"
-    onClick={() => router.back()}
-  />
-
-  {/* RIGHT */}
-  <p className="text-[#FFD900] text-3xl font-[Bangers] tracking-[2px]">
-    SHARE YOUR STORY
-  </p>
-</div>
+    
 <div className="p-4">
     <img src="/assets/Name.jpg" alt="Submit" className="mx-auto w-full md:w-1/2 lg:w-1/2" />
 
