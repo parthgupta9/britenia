@@ -25,6 +25,8 @@ const [showError, setShowError] = useState(false)
     anonymize: true,
   })
 
+  const isReadyToSubmit = otpRequested && checkboxes.moderation
+
   const handleInputChange = (field: string, value: string) => {
     setFormData((prev) => ({
       ...prev,
@@ -170,17 +172,16 @@ const [showError, setShowError] = useState(false)
       </div>
 <Link href="/submit">
 <button
-
-  disabled={!otpRequested}
+  disabled={!isReadyToSubmit}
   className={`w-full mt-2 font-[fredoka] font-semibold py-2 px-4 transition-colors text-xl
     ${
-      otpRequested
+      isReadyToSubmit
         ? "bg-[#FFD900] text-black hover:bg-yellow-500"
         : "bg-[#D4D4D4] text-[#9F9F9F] cursor-not-allowed"
     }
   `}
 >
-  {otpRequested ? "Submit" : "Verify Your Number"}
+  {isReadyToSubmit ? "Submit" : "Verify Your Number"}
 </button>
 </Link>
     </div>
