@@ -9,12 +9,13 @@ import { useState } from "react"
 export default function ParentConsentForm() {
     const [otpRequested, setOtpRequested] = useState(false)
 const [otp, setOtp] = useState(["", "", "", ""])
+const [showError, setShowError] = useState(false)
 
   const [formData, setFormData] = useState({
     parentName: "Abcd",
     gender: "Male",
     age: "00",
-    mobileNumber: "9992226662",
+    mobileNumber: "00",
   })
 
   type CheckboxField = "moderation" | "anonymize"
@@ -102,15 +103,34 @@ const [otp, setOtp] = useState(["", "", "", ""])
               <input
                 type="tel"
                 value={formData.mobileNumber}
-                onChange={(e) => handleInputChange("mobileNumber", e.target.value)}
+                onChange={(e) => {
+                  handleInputChange("mobileNumber", e.target.value)
+                  setShowError(false)
+                }}
                 className="w-full px-3 py-2 bg-white font-[fredoka] text-black border-0 focus:outline-none focus:ring-2 focus:ring-[#FFD900]"
-                placeholder="9999999999"
+                placeholder="00"
               />
+              {showError && formData.mobileNumber.length !== 10 && (
+                <p className="text-red-400 text-xs font-[fredoka] mt-1">
+                  Mobile number must be exactly 10 digits
+                </p>
+              )}
             </div>
          <button
   type="button"
-  onClick={() => setOtpRequested(true)}
-  className="bg-yellow-400 text-black font-[fredoka] font-bold py-2 px-3 hover:bg-yellow-500"
+  onClick={() => {
+    if (formData.mobileNumber.length === 10) {
+      setOtpRequested(true)
+      setShowError(false)
+    } else {
+      setShowError(true)
+    }
+  }}
+  className={`font-[fredoka] font-bold py-2 px-3 transition-colors ${
+    formData.mobileNumber.length === 10
+      ? "bg-yellow-400 text-black hover:bg-yellow-500 cursor-pointer"
+      : "bg-[#D4D4D4] text-[#9F9F9F] cursor-pointer"
+  }`}
 >
   Get OTP
 </button>

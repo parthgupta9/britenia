@@ -31,7 +31,6 @@ export default function Home() {
   }}
 ></div>
 
-             
     <div className="mt-10 mr-16 flex-shrink-0">
   <img
     src="/assets/2.png"

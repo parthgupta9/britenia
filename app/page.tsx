@@ -40,6 +40,7 @@ const nextVideo = () => {
           {/* Header with Logo */}
           <header className="px-4 mt-10 h-[17vh] sm:h-[100px] md:h-[120px] lg:h-[140px] rounded-lg flex items-center justify-between flex-shrink-0 mb-4">
             <div className="flex items-center gap-2">
+     
              <div
   className="relative -translate-y-[40px] w-[103px] h-[87px] sm:w-12 sm:h-12 rounded-lg"
   style={{
