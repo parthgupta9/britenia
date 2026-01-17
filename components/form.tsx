@@ -46,7 +46,8 @@ const [otp, setOtp] = useState(["", "", "", ""])
   return (
   <div className="px-4 w-full max-w-lg h-auto mx-auto">
 
-   <div className={`bg-[#63277E] border-4 border-[#FFD900] px-4 py-2 ${otpRequested ? 'h-[38vh]' : 'h-[36vh]'} overflow-y-auto`}>
+   <div className={`... min-h-[40svh] max-h-none overflow-hidden
+ bg-[#63277E] border-4 border-[#FFD900] px-4 py-2 ${otpRequested ? 'h-[40vh]' : 'h-[38vh]'} overflow-y-auto`}>
 
         {/* Header */}
      

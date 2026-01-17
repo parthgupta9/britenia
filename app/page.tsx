@@ -61,22 +61,25 @@ const nextVideo = () => {
          
           </div>
           </header>
-        <div className="w-full h-[11.7vh] bg-[#63277E] flex items-center justify-between px-4">
+      <div className="w-full min-h-[80px] bg-[#63277E] flex items-center justify-between px-4 py-2 shrink-0">
   {/* LEFT */}
   <img
     src="/assets/Back.png"
-    className="w-8 h-8 cursor-pointer"
+    className="w-8 h-8 cursor-pointer flex-shrink-0"
     alt="Back"
   />
 
   {/* RIGHT */}
- <p className="p-2 text-[#FFD900] font-[Bangers] transition-all duration-300">
-<span> Learn to fight bullying. Get a chance to feature as a Tiger Hero in comics. </span>
-<p className="text-[#FFFFFF]">Watch the videos to know how regular fun often turns into bullying. Full website Coming Soon! </p>
-
-</p>
-
+  <div className="ml-3 flex-1 text-center leading-tight">
+    <p className="text-[#FFD900] font-[Bangers] text-base sm:text-lg">
+      Learn to fight bullying. Get a chance to feature as a Tiger Hero in comics.
+    </p>
+    <p className="text-[#FFFFFF] text-sm mt-1">
+      Watch the videos to know how regular fun often turns into bullying. Full website Coming Soon!
+    </p>
+  </div>
 </div>
+
 
 
           {/* Video Carousel Section */}
