@@ -62,19 +62,14 @@ const nextVideo = () => {
           </div>
           </header>
       <div className="w-full min-h-[80px] bg-[#63277E] flex items-center justify-between px-4 py-2 shrink-0">
-  {/* LEFT */}
-  <img
-    src="/assets/Back.png"
-    className="w-8 h-8 cursor-pointer flex-shrink-0"
-    alt="Back"
-  />
+
 
   {/* RIGHT */}
   <div className="ml-3 flex-1 text-center leading-tight">
-    <p className="text-[#FFD900] font-[Bangers] text-base sm:text-lg">
+    <p className="text-[#FFD900] font-[Bangers] text-[22px] sm:text-lg">
       Learn to fight bullying. Get a chance to feature as a Tiger Hero in comics.
     </p>
-    <p className="text-[#FFFFFF] text-sm mt-1">
+    <p className="text-[#FFFFFF] text-[12px] mt-1">
       Watch the videos to know how regular fun often turns into bullying. Full website Coming Soon!
     </p>
   </div>
