@@ -28,9 +28,9 @@ const nextVideo = () => {
 }
 
   return (
-    <div >
+    <div className="min-h-screen flex flex-col">
          <div className="h-4 bg-[#FFD900]"></div>
-      <div className="relative w-full min-h-dvh flex items-center justify-center" 
+      <div className="relative flex-1 w-full items-center justify-center" 
       style={{backgroundImage:"url(/assets/bg.png)", backgroundSize: "cover",
                   backgroundPosition: "center"}}>
                     
@@ -120,7 +120,9 @@ const nextVideo = () => {
 
 
 
-                  <div className="w-full h-[6.7vh] gap-10 bg-[#63277E] flex items-center justify-center px-4 ">
+       
+        </div>
+                   <div className="fixed bottom-0 left-0 right-0 w-full h-[6.7vh] gap-10 bg-[#63277E] flex items-center justify-center px-4 z-50">
   {/* LEFT */}
   <button className="text-[#FFFFFF] text-2xl font-[fredoka] font-bold">
     Get Notified
@@ -136,8 +138,8 @@ const nextVideo = () => {
   {/* RIGHT */}
   
 </div>
-        </div>
       </div>
+      
     </div>
   )
 }
