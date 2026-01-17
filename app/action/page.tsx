@@ -1,16 +1,17 @@
 "use client"
 import Link from "next/link"
-
+import { useRouter } from "next/navigation"
 import FORM from "@/components/form"
 
 
 
 export default function Home() {
+  const router = useRouter()
  
   return (
     <div >
          <div className="h-4 bg-[#FFD900]"></div>
-      <div className="relative w-full h-full flex items-center justify-center" 
+      <div className="relative w-full min-h-dvh flex items-center justify-center" 
       style={{backgroundImage:"url(/assets/bg.png)", backgroundSize: "cover",
                   backgroundPosition: "center"}}>
                     
@@ -19,7 +20,7 @@ export default function Home() {
                   >
                  
           {/* Header with Logo */}
-          <header className="px-4 mt-10 h-[15vh] sm:h-[100px] md:h-[120px] lg:h-[140px] rounded-lg flex items-center justify-between flex-shrink-0 mb-4">
+          <header className="px-4 mt-10 h-[17vh] sm:h-[100px] md:h-[120px] lg:h-[140px] rounded-lg flex items-center justify-between flex-shrink-0 mb-4">
             <div className="flex items-center gap-2">
              <div
   className="relative -translate-y-[30px] w-[103px] h-[87px] sm:w-12 sm:h-12 rounded-lg"
@@ -46,12 +47,13 @@ export default function Home() {
     src="/assets/Back.png"
     className="w-8 h-8 cursor-pointer"
     alt="Back"
+    onClick={() => router.back()}
   />
 
   {/* RIGHT */}
-  <p className="text-[#FFD900] text-2.5xl font-[Bangers] tracking-[2px]">
-    SHARE YOUR STORY
-  </p>
+  <button className="text-[#FFD900] text-2xl font-[Bangers] tracking-[2px]">
+    Sign up to stay updated
+  </button>
 </div>
 <div>
     <FORM/>

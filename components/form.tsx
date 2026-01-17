@@ -46,24 +46,21 @@ const [otp, setOtp] = useState(["", "", "", ""])
   return (
   <div className="px-4 w-full max-w-lg h-auto mx-auto">
 
-   <div className={`bg-[#63277E] border-4 border-[#FFD900] px-4 py-2 ${otpRequested ? 'h-[51vh]' : 'h-[49vh]'} overflow-y-auto`}>
+   <div className={`bg-[#63277E] border-4 border-[#FFD900] px-4 py-2 ${otpRequested ? 'h-[38vh]' : 'h-[36vh]'} overflow-y-auto`}>
 
         {/* Header */}
-        <div className=" text-center">
-          <h1 className="text-xl font-[fredoka] font-[700] text-[#FFD900] ">Parent consent</h1>
-          <p className="text-white text-sm font-[fredoka]">We need to verify an adult is Present.</p>
-        </div>
+     
 
         {/* Form */}
         <form onSubmit={handleSubmit}>
           {/* Parent Name */}
           <div>
-            <label className="block text-[#FFD900] font-[fredoka] text-sm ">Parent Name</label>
+            <label className="block text-[#FFD900] font-[fredoka] text-sm ">Name</label>
             <input
               type="text"
               value={formData.parentName}
               onChange={(e) => handleInputChange("parentName", e.target.value)}
-              className="mb-1 w-full px-2 py-0.25 bg-white font-[fredoka] text-black border-0 focus:outline-none focus:ring-2 focus:ring-[#FFD900]"
+              className="mb-1 w-full px-3 py-2 bg-white font-[fredoka] text-black border-0 focus:outline-none focus:ring-2 focus:ring-[#FFD900]"
               placeholder="Enter parent name"
             />
           </div>
@@ -76,7 +73,7 @@ const [otp, setOtp] = useState(["", "", "", ""])
                 <select
                   value={formData.gender}
                   onChange={(e) => handleInputChange("gender", e.target.value)}
-                  className="w-full px-2 py-0.25 bg-white font-[fredoka] text-black  border-0 focus:outline-none focus:ring-2 focus:ring-[#FFD900] appearance-none cursor-pointer"
+                  className="w-full px-3 py-2 bg-white font-[fredoka] text-black  border-0 focus:outline-none focus:ring-2 focus:ring-[#FFD900] appearance-none cursor-pointer"
                 >
                   <option>Male</option>
                   <option>Female</option>
@@ -92,7 +89,7 @@ const [otp, setOtp] = useState(["", "", "", ""])
                 type="text"
                 value={formData.age}
                 onChange={(e) => handleInputChange("age", e.target.value)}
-                className="mb-1 w-full px-2 py-0.25 bg-white font-[fredoka] text-black  border-0 focus:outline-none focus:ring-2 focus:ring-[#FFD900]"
+                className="mb-1 w-full px-3 py-2 bg-white font-[fredoka] text-black  border-0 focus:outline-none focus:ring-2 focus:ring-[#FFD900]"
                 placeholder="00"
               />
             </div>
@@ -106,14 +103,14 @@ const [otp, setOtp] = useState(["", "", "", ""])
                 type="tel"
                 value={formData.mobileNumber}
                 onChange={(e) => handleInputChange("mobileNumber", e.target.value)}
-                className="w-full px-2 py-0.25 bg-white font-[fredoka] text-black border-0 focus:outline-none focus:ring-2 focus:ring-[#FFD900]"
+                className="w-full px-3 py-2 bg-white font-[fredoka] text-black border-0 focus:outline-none focus:ring-2 focus:ring-[#FFD900]"
                 placeholder="9999999999"
               />
             </div>
          <button
   type="button"
   onClick={() => setOtpRequested(true)}
-  className="bg-yellow-400 text-black font-[fredoka] font-bold py-0.25 px-2 hover:bg-yellow-500"
+  className="bg-yellow-400 text-black font-[fredoka] font-bold py-2 px-3 hover:bg-yellow-500"
 >
   Get OTP
 </button>
@@ -132,7 +129,7 @@ const [otp, setOtp] = useState(["", "", "", ""])
           newOtp[index] = e.target.value.replace(/\D/, "")
           setOtp(newOtp)
         }}
-        className="w-14 h-6 text-center text-lg font-bold bg-white text-black border-2 border-[#FFD900] focus:outline-none focus:ring-2 focus:ring-[#FFD900]"
+        className="w-14 h-8 text-center text-lg font-bold bg-white text-black border-2 border-[#FFD900] focus:outline-none focus:ring-2 focus:ring-[#FFD900]"
       />
     ))}
   </div>
@@ -148,19 +145,12 @@ const [otp, setOtp] = useState(["", "", "", ""])
                 className="w-4 h-4 cursor-pointer accent-yellow-400"
               />
               <span className="ml-3 text-white text-sm font-[fredoka]">
-                I allow this story to be moderated and shared on the platform.
+              By signing up you agree to our Terms & Conditions and Privacy Policy
+
               </span>
             </label>
 
-            <label className="flex items-start cursor-pointer group">
-              <input
-                type="checkbox"
-                checked={checkboxes.anonymize}
-                onChange={() => handleCheckboxChange("anonymize")}
-                className="w-4 h-4 cursor-pointer accent-blue-500"
-              />
-              <span className="ml-3 text-white text-sm font-[fredoka]">Anonymize child's name (Recommended)</span>
-            </label>
+          
           </div>
         </form>
       </div>
@@ -176,7 +166,7 @@ const [otp, setOtp] = useState(["", "", "", ""])
     }
   `}
 >
-  Submit with Parent —
+  {otpRequested ? "Submit" : "Verify Your Number"}
 </button>
 </Link>
     </div>

@@ -59,14 +59,7 @@ export default function Home() {
 <div className="p-4">
     <img src="/assets/Name.jpg" alt="Submit" className="mx-auto w-full md:w-1/2 lg:w-1/2" />
 
-<button
 
-  className={` w-full mt-4 font-[fredoka] font-semibold py-2 px-4 transition-colors text-xl bg-[#FFD900] text-black hover:bg-yellow-500
-      
-  `}
->
-  Back to Home
-</button>
 </div>
       
         </div>

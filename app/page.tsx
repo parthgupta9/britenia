@@ -30,13 +30,12 @@ const nextVideo = () => {
   return (
     <div >
          <div className="h-4 bg-[#FFD900]"></div>
-      <div className="relative w-full h-full flex items-center justify-center" 
+      <div className="relative w-full min-h-dvh flex items-center justify-center" 
       style={{backgroundImage:"url(/assets/bg.png)", backgroundSize: "cover",
                   backgroundPosition: "center"}}>
                     
         {/* Inner container maintains 1080/1920 aspect ratio with max dimensions */}
-        <div className="mt-2 w-full h-full max-w-full max-h-[1920px] flex flex-col gap-[10px] rounded-lg"  
-                  >
+        <div className="mt-2 w-full h-full max-w-full flex flex-col gap-[10px] rounded-lg" >
                  
           {/* Header with Logo */}
           <header className="px-4 mt-10 h-[17vh] sm:h-[100px] md:h-[120px] lg:h-[140px] rounded-lg flex items-center justify-between flex-shrink-0 mb-4">
@@ -56,14 +55,13 @@ const nextVideo = () => {
     src="/assets/2.png"
     alt="Logo"
     className="w-[15vh] h-[22vh] sm:w-[20vh] sm:h-[20vh] md:w-[25vh] md:h-[25vh] lg:w-[29.3vh] lg:h-[29.3vh] object-contain "
-  style={{marginTop:"-50px"}}/>
+  style={{marginTop:"-30px"}}/>
 </div>
-
 
          
           </div>
           </header>
-        <div className="w-full h-[7.7vh] bg-[#63277E] flex items-center justify-between px-4">
+        <div className="w-full h-[11.7vh] bg-[#63277E] flex items-center justify-between px-4">
   {/* LEFT */}
   <img
     src="/assets/Back.png"
@@ -72,8 +70,10 @@ const nextVideo = () => {
   />
 
   {/* RIGHT */}
- <p className="text-[#FFD900] text-3xl font-[Bangers] tracking-[2px] transition-all duration-300">
-  {slides[activeIndex].title}
+ <p className="p-2 text-[#FFD900] font-[Bangers] transition-all duration-300">
+<span> Learn to fight bullying. Get a chance to feature as a Tiger Hero in comics. </span>
+<p className="text-[#FFFFFF]">Watch the videos to know how regular fun often turns into bullying. Full website Coming Soon! </p>
+
 </p>
 
 </div>
@@ -85,13 +85,13 @@ const nextVideo = () => {
             <div className="flex-1 flex items-center justify-center gap-[10px] min-h-0 overflow-visible">
               {/* Left Arrow */}
               <button   onClick={prevVideo} className="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] md:w-[70px] md:h-[70px] lg:w-[80px] lg:h-[80px] text-[#FFD900] font-bold rounded-full flex items-center justify-center transition-transform hover:scale-110 flex-shrink-0 shadow-lg">
-                ◀
+                <img src="/assets/4.png"></img>
               </button>
 
               {/* Video Player Container */}
               <div className="flex-1 flex flex-col gap-[10px] min-w-0 min-h-0 p-2 border-2 border-[#FFD900]">
                 {/* Video 1 */}
-                <div className="overflow-hidden aspect-[3/5] h-[40vh] ">
+                <div className="overflow-hidden aspect-[3/5] h-[37vh] ">
 
          <video
   key={slides[activeIndex].src}
@@ -113,7 +113,7 @@ const nextVideo = () => {
 
               {/* Right Arrow */}
               <button onClick={nextVideo} className="w-[50px] h-[50px] sm:w-[60px] sm:h-[60px] md:w-[70px] md:h-[70px] lg:w-[80px] lg:h-[80px]  text-[#FFD900] font-bold rounded-full flex items-center justify-center transition-transform hover:scale-110 flex-shrink-0 shadow-lg">
-                ▶
+                <img src="/assets/7.png"></img>
               </button>
             </div>
           </div>
@@ -121,11 +121,11 @@ const nextVideo = () => {
 
 
 
-                  <div className="w-full h-[6.7vh] gap-10 bg-[#63277E] flex items-center justify-center mb-1 px-4 ">
+                  <div className="w-full h-[6.7vh] gap-10 bg-[#63277E] flex items-center justify-center px-4 ">
   {/* LEFT */}
-  <p className="text-[#FFFFFF] text-2xl font-[fredoka] font-bold">
-    Choose Your Action
-  </p>
+  <button className="text-[#FFFFFF] text-2xl font-[fredoka] font-bold">
+    Get Notified
+  </button>
   <Link href="/action">
   <img
     src="/assets/5.png"
