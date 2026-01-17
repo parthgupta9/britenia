@@ -1,11 +1,12 @@
 "use client"
 import Link from "next/link"
-
+import { useRouter } from "next/navigation"
 import FORM from "@/components/form"
 
 
 
 export default function Home() {
+  const router = useRouter()
  
   return (
     <div >
@@ -49,6 +50,7 @@ export default function Home() {
     src="/assets/Back.png"
     className="w-8 h-8 cursor-pointer"
     alt="Back"
+    onClick={() => router.back()}
   />
 
   {/* RIGHT */}
