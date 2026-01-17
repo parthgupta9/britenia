@@ -110,11 +110,7 @@ const [showError, setShowError] = useState(false)
                 className="w-full px-3 py-2 bg-white font-[fredoka] text-black border-0 focus:outline-none focus:ring-2 focus:ring-[#FFD900]"
                 placeholder="00"
               />
-              {showError && formData.mobileNumber.length !== 10 && (
-                <p className="text-red-400 text-xs font-[fredoka] mt-1">
-                  Mobile number must be exactly 10 digits
-                </p>
-              )}
+             
             </div>
          <button
   type="button"
@@ -122,9 +118,7 @@ const [showError, setShowError] = useState(false)
     if (formData.mobileNumber.length === 10) {
       setOtpRequested(true)
       setShowError(false)
-    } else {
-      setShowError(true)
-    }
+    } 
   }}
   className={`font-[fredoka] font-bold py-2 px-3 transition-colors ${
     formData.mobileNumber.length === 10
