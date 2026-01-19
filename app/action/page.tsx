@@ -20,10 +20,11 @@ export default function Home() {
                   >
                  
           {/* Header with Logo */}
-             <header className="px-4 mt-10 h-[19vh] sm:h-[100px] md:h-[120px] lg:h-[140px] rounded-lg flex items-center justify-between flex-shrink-0 mb-4">
-            <div className="flex items-center gap-2">
+           <header className="px-4 mt-10 h-[19vh] sm:h-[100px] md:h-[120px] lg:h-[140px] rounded-lg flex items-center justify-between flex-shrink-0 mb-4">
+            <div className="flex items-center gap-2 min-w-0">
+     
              <div
-  className="relative -translate-y-[40px] w-[103px] h-[87px] sm:w-12 sm:h-12 rounded-lg"
+  className="relative -translate-y-[50px] w-[103px] h-[87px] sm:w-12 sm:h-12 rounded-lg flex-shrink-0"
   style={{
     backgroundImage: "url(/assets/1.png)",
     backgroundSize: "cover",
@@ -32,11 +33,15 @@ export default function Home() {
 ></div>
 
              
-    <div className="mt-10 mr-16 flex-shrink-0">
+    <div className="mt-10 h-full flex-shrink-0 relative z-10">
   <img
-    src="/assets/2.png"
+    src="/assets/9.png"
     alt="Logo"
-    className="w-[15vh] h-[22vh] sm:w-[20vh] sm:h-[20vh] md:w-[25vh] md:h-[25vh] lg:w-[29.3vh] lg:h-[29.3vh] object-contain "
+    className="w-[44vh] h-[28vh] sm:w-[20vh] sm:h-[29vh] md:w-[25vh] md:h-[25vh] lg:w-[29.3vh] lg:h-[29.3vh] object-contain "
+    style={{marginLeft:"-18vw"
+
+    }}
+   
   />
 </div>
 
