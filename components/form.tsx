@@ -3,19 +3,20 @@
 import Link from "next/link"
 import type React from "react"
 
-import { useState } from "react"
+import { useRef, useState } from "react"
 
 
 export default function ParentConsentForm() {
     const [otpRequested, setOtpRequested] = useState(false)
 const [otp, setOtp] = useState(["", "", "", ""])
 const [showError, setShowError] = useState(false)
+    const otpRefs = useRef<Array<HTMLInputElement | null>>([])
 
   const [formData, setFormData] = useState({
-    parentName: "Abcd",
-    gender: "Male",
-    age: "00",
-    mobileNumber: "00",
+    parentName: "",
+    gender: "Male", 
+    age: "",
+    mobileNumber: "",
   })
 
   type CheckboxField = "moderation" | "anonymize"
@@ -24,6 +25,26 @@ const [showError, setShowError] = useState(false)
     moderation: false,
     anonymize: true,
   })
+
+  const sanitizeName = (value: string) => value.replace(/[^a-zA-Z\s]/g, "")
+  const sanitizeDigits = (value: string) => value.replace(/\D/g, "")
+
+  const handleOtpChange = (index: number, rawValue: string) => {
+    const value = rawValue.replace(/\D/, "")
+    const newOtp = [...otp]
+    newOtp[index] = value
+    setOtp(newOtp)
+
+    if (value && index < otp.length - 1) {
+      otpRefs.current[index + 1]?.focus()
+    }
+  }
+
+  const handleOtpKeyDown = (index: number, e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Backspace" && !otp[index] && index > 0) {
+      otpRefs.current[index - 1]?.focus()
+    }
+  }
 
   const isReadyToSubmit = otpRequested && checkboxes.moderation
 
@@ -62,7 +83,7 @@ const [showError, setShowError] = useState(false)
             <input
               type="text"
               value={formData.parentName}
-              onChange={(e) => handleInputChange("parentName", e.target.value)}
+              onChange={(e) => handleInputChange("parentName", sanitizeName(e.target.value))}
               className="mb-1 w-full px-3 py-2 bg-white font-[fredoka] text-black border-0 focus:outline-none focus:ring-2 focus:ring-[#FFD900]"
               placeholder="Enter parent name"
             />
@@ -91,7 +112,7 @@ const [showError, setShowError] = useState(false)
               <input
                 type="text"
                 value={formData.age}
-                onChange={(e) => handleInputChange("age", e.target.value)}
+                onChange={(e) => handleInputChange("age", sanitizeDigits(e.target.value))}
                 className="mb-1 w-full px-3 py-2 bg-white font-[fredoka] text-black  border-0 focus:outline-none focus:ring-2 focus:ring-[#FFD900]"
                 placeholder="00"
               />
@@ -106,7 +127,8 @@ const [showError, setShowError] = useState(false)
                 type="tel"
                 value={formData.mobileNumber}
                 onChange={(e) => {
-                  handleInputChange("mobileNumber", e.target.value)
+                  const digitsOnly = sanitizeDigits(e.target.value).slice(0, 10)
+                  handleInputChange("mobileNumber", digitsOnly)
                   setShowError(false)
                 }}
                 className="w-full px-3 py-2 bg-white font-[fredoka] text-black border-0 focus:outline-none focus:ring-2 focus:ring-[#FFD900]"
@@ -140,11 +162,11 @@ const [showError, setShowError] = useState(false)
         type="text"
         maxLength={1}
         value={digit}
-        onChange={(e) => {
-          const newOtp = [...otp]
-          newOtp[index] = e.target.value.replace(/\D/, "")
-          setOtp(newOtp)
+        ref={(el) => {
+          otpRefs.current[index] = el
         }}
+        onChange={(e) => handleOtpChange(index, e.target.value)}
+        onKeyDown={(e) => handleOtpKeyDown(index, e)}
         className="w-14 h-8 text-center text-lg font-bold bg-white text-black border-2 border-[#FFD900] focus:outline-none focus:ring-2 focus:ring-[#FFD900]"
       />
     ))}
