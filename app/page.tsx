@@ -9,10 +9,12 @@ export default function Home() {
   const slides = [
   {
     src: "/assets/1.mp4",
+    poster: "/assets/10.png",
     title: "VERBAL BULLYING",
   },
   {
     src: "/assets/2.mp4",
+    poster: "/assets/11.png",
     title: "PHYSICAL BULLYING",
   },
 ]
@@ -99,6 +101,7 @@ const nextVideo = () => {
          <video
   key={slides[activeIndex].src}
   src={slides[activeIndex].src}
+  poster={slides[activeIndex].poster}
   className="w-full h-full object-cover"
   controls
   playsInline
