@@ -49,12 +49,54 @@ export default function Home() {
           </div>
           </header>
     
-<div className="p-4">
-    <img src="/assets/Name.jpg" alt="Submit" className="mx-auto w-full mt-[5vh] md:w-1/2 lg:w-1/2" />
+<div className="min-h-[50svh] sm:min-h-screen flex items-center justify-center 
+             sm:px-4 p-4 ">
+  
+  <div className="w-full max-w-2xl text-center p-2
+             bg-[#63277E] border-2 border-[#FFD900] 
+                  px-5 sm:p-12">
+    
+    {/* Checkmark Circle */}
+    <div className="flex justify-center mb-2 sm:mb-10">
+      <div className="relative w-16 h-16 sm:w-36 sm:h-36">
+        <div className="w-full h-full rounded-full 
+                        bg-[#E57825] shadow-md 
+                        flex items-center justify-center">
+          <svg
+            className="w-10 h-10 sm:w-18 sm:h-18 text-primary-foreground"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            strokeWidth={3}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M5 13l4 4L19 7"
+            />
+          </svg>
+        </div>
+      </div>
+    </div>
 
+    {/* Heading */}
+    <h1 className="text-2xl sm:text-5xl font-extrabold 
+                   text-[#FFD900] mb-2 sm:mb-4 tracking-tight">
+      Thank You!
+    </h1>
 
+    {/* Description */}
+    <div className="space-y-1.5 sm:space-y-3">
+      <p className="text-sm sm:text-xl text-foreground/90">
+        for showing interest to fight bullying!We will notify you as soon as the full website goes live.
+      </p>
+     
+    </div>
+
+  </div>
 </div>
-      
+
+
         </div>
       </div>
     </div>
