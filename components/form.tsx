@@ -110,9 +110,16 @@ const [showError, setShowError] = useState(false)
             <div>
               <label className="block text-[#FFD900] font-[fredoka] text-sm">Age</label>
               <input
-                type="text"
+                type="number"
+                min="0"
+                max="100"
                 value={formData.age}
-                onChange={(e) => handleInputChange("age", sanitizeDigits(e.target.value))}
+                onChange={(e) => {
+                  const value = sanitizeDigits(e.target.value)
+                  if (value === "" || parseInt(value, 10) <= 100) {
+                    handleInputChange("age", value)
+                  }
+                }}
                 className="mb-1 w-full px-3 py-2 bg-white font-[fredoka] text-black  border-0 focus:outline-none focus:ring-2 focus:ring-[#FFD900]"
                 placeholder="00"
               />
@@ -132,7 +139,7 @@ const [showError, setShowError] = useState(false)
                   setShowError(false)
                 }}
                 className="w-full px-3 py-2 bg-white font-[fredoka] text-black border-0 focus:outline-none focus:ring-2 focus:ring-[#FFD900]"
-                placeholder="00"
+                placeholder="Enter mobile number"
               />
              
             </div>
